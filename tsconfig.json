@@ -1,0 +1,19 @@
+{
+  "files": [
+//    "src/ts/Person.ts",
+    "src/ts/main.ts"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+//    "outDir": "dist/js",
+//    "outFile": "index.js"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
