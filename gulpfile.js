@@ -2,6 +2,8 @@ const gulp = require('gulp')
 const gulpSass = require('gulp-sass')
 const watch = require('gulp-watch')
 const connect = require('gulp-connect')
+const webserver = require('gulp-webserver')
+const exec = require('child_process').exec
 // const ts = require('gulp-typescript')
 const buffer = require('vinyl-buffer')
 const sourceMaps = require('gulp-sourcemaps')
@@ -33,7 +35,7 @@ const browserifyTs =  function () {
 
 // ts 浏览器（web）环境下运行
 gulp.task('browserify', function () {
-  if (process.env.NODE_ENV.trim() === 'dev') {
+  if (process.env.NODE_ENV && process.env.NODE_ENV.trim() === 'dev') {
     return browserifyTs()
       .bundle()
       .pipe(source('index.js'))
@@ -44,6 +46,7 @@ gulp.task('browserify', function () {
       .pipe(uglify())
       .pipe(sourceMaps.write('./'))
       .pipe(gulp.dest('dist/js'))
+      .pipe(connect.reload())
   } else {
     return browserifyTs()
       .bundle()
@@ -58,25 +61,34 @@ gulp.task('sass', function () {
   return gulp.src('src/sass/index.sass')
     .pipe(gulpSass())
     .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload())
 })
 
 gulp.task('webserver', function () {
-  connect.server({
-    root: 'dist',
-    livereload: true,
-    port: 6060
-  })
+  gulp.src('./dist')
+    .pipe(webserver({
+      livereload: true,
+      port: 6060,
+      open: true
+    }))
 })
 
 gulp.task('html', function () {
   return gulp.src('src/index.html')
     .pipe(gulp.dest('dist/'))
+    .pipe(connect.reload())
 })
 
 gulp.task('watch', function () {
   watch('src/sass/**/*.sass', gulp.series('sass'))
   watch('src/ts/**/*.ts', gulp.series('browserify'))
   watch('src/index.html', gulp.series('html'))
+})
+
+gulp.task('clean', function (done) {
+  exec('rm -rf ./dist', function () {
+    done
+  })
 })
 
 gulp.task('default', gulp.parallel('browserify', 'sass', 'html'))

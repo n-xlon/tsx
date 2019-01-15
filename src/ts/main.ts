@@ -1,6 +1,10 @@
 import { User, getName } from './Person'
-import * as v from './variable'
-import './interface'
+import * as v from './variable'  // 变量
+import './interface' // 接口
+import './class'  // 类
+import './func'  // 函数
+import './identity'  // 泛型
+import './enumeration'  // 枚举
 
 let users = new User('xlon', 23, 'shanghai pengpu street')
 
