@@ -5,6 +5,8 @@ import './class'  // 类
 import './func'  // 函数
 import './identity'  // 泛型
 import './enumeration'  // 枚举
+import './symbols'  // symbols
+import './iteratorsAndGenerators'  // 迭代器和生成器
 
 let users = new User('xlon', 23, 'shanghai pengpu street')
 
