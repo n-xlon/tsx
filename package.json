@@ -5,13 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set NODE_ENV=dev && gulp dev"
+    "dev": "set NODE_ENV=dev && gulp dev",
+    "build:ts": "tsc -p",
+    "ts_vue": "webpack --config ts_vue/webpack.config.js",
+    "watch": "webpack-dev-server --mode=development --inline --hot --open --content-base ts_vue/dest && npm run dev:ts",
+    "dev:ts": "webpack --config ts_vue/webpack.config.js --watch"
   },
   "author": "xm",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "browserify": "^16.2.3",
     "child_process": "^1.0.2",
+    "css-loader": "^2.1.0",
     "gulp": "^4.0.0",
     "gulp-connect": "^5.7.0",
     "gulp-sass": "^4.0.2",
@@ -20,11 +29,23 @@
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-webserver": "^0.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
     "tsify": "^4.0.1",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "vue-class-component": "^6.3.2",
+    "vue-loader": "^15.5.1",
+    "vue-template-compiler": "^2.5.22",
+    "vuex": "^3.0.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "vue": "^2.5.22"
   }
 }
