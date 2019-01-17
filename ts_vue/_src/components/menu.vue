@@ -23,8 +23,6 @@
         type: Number,
         default: 10
       }
-    },
-    watch: {
     }
   })
 

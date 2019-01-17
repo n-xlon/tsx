@@ -8,12 +8,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, '_src/main.ts'),
-    vendor: ['vue']
+    index: path.resolve(__dirname, '_src/main.ts')
   },
   output: {
     path: path.resolve(__dirname, 'dest/'),
-    filename: '[name].min.js',
+    filename: 'js/[name].min.js',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
