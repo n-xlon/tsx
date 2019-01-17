@@ -8,7 +8,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, '_src/main.ts')
+    index: path.resolve(__dirname, '_src/main.ts'),
+    vendor: ['vue']
   },
   output: {
     path: path.resolve(__dirname, 'dest/'),
@@ -52,7 +53,8 @@ module.exports = {
     contentBase: '/',
     hot: true,
     inline: true,
-    port: "6060"
+    port: "6060",
+    open: true
   },
   devtool: 'source-map',
   plugins: [

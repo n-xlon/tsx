@@ -2,13 +2,13 @@
   "name": "tsx_",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "ts_vue/dest/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set NODE_ENV=dev && gulp dev",
     "build:ts": "tsc -p",
-    "ts_vue": "webpack --config ts_vue/webpack.config.js",
-    "watch": "webpack-dev-server --mode=development --inline --hot --open --content-base ts_vue/dest && npm run dev:ts",
+    "ts_vue": "webpack -p --display-modules --display-chunks --config ts_vue/webpack.config.js",
+    "watch": "webpack-dev-server --config ts_vue/webpack.config.js --hot --inline",
     "dev:ts": "webpack --config ts_vue/webpack.config.js --watch"
   },
   "author": "xm",
@@ -38,6 +38,7 @@
     "vinyl-source-stream": "^2.0.0",
     "vue-class-component": "^6.3.2",
     "vue-loader": "^15.5.1",
+    "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.22",
     "vuex": "^3.0.1",
     "webpack": "^4.28.4",
@@ -46,6 +47,7 @@
   },
   "dependencies": {
     "typescript": "^3.2.2",
-    "vue": "^2.5.22"
+    "vue": "^2.5.22",
+    "vuex": "^3.0.1"
   }
 }
