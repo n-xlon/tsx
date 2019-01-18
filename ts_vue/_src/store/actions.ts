@@ -1,7 +1,7 @@
 
 interface store {
   dispatch: any,
-  commit: any
+  commit: any,
 }
 
 export function users (store: store, name: string): Promise<any> {
