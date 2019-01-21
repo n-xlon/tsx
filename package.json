@@ -38,6 +38,7 @@
     "vinyl-source-stream": "^2.0.0",
     "vue-class-component": "^6.3.2",
     "vue-loader": "^15.5.1",
+    "vue-property-decorator": "^7.3.0",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.22",
     "vuex": "^3.0.1",

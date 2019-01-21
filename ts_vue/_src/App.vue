@@ -4,7 +4,7 @@
     <span>{{ num }}</span>
     <button @click="reduceNum">-</button>
     <!--<Menu :count="num"></Menu>-->
-    <div class="_nav"><router-link :to="{path: it.path}" v-for="(it, index) in menuList" :key="index">{{ it.text }}</router-link></div>
+    <div class="_nav"><router-link :to="{path: it.path, query: {name: it.text}}" v-for="(it, index) in menuList" :key="index">{{ it.text }}</router-link></div>
     <div class="_nav_content">
       <router-view/>
     </div>

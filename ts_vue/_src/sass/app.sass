@@ -1,3 +1,7 @@
+p, ul, li
+  padding: 0
+  margin: 0
+
 .ts_vue
   ._nav
     padding: 5px 10px
@@ -16,3 +20,34 @@
   ._nav_content
     padding: 10px
     //background: #cccccc
+
+._toast
+  position: fixed
+  max-width: 120px
+  min-height: 45px
+  top: 5px
+  left: 0
+  right: 0
+  margin: 5px auto
+  border-radius: 3px
+  background-color: rgba(0, 0, 0, 1)
+  padding: 5px 10px
+  box-sizing: border-box
+  color: #ffffff
+  //font-weight: bold
+  display: flex
+  align-items: center
+  justify-content: center
+  animation: slowShow 3s
+  ._close
+    position: absolute
+    top: 0
+    right: 5px
+    font-size: 15px
+    cursor: pointer
+
+@keyframes slowShow
+  0%
+    opacity: 0
+  100%
+    opacity: 1
