@@ -1,25 +1,46 @@
+body
+  background-color: rgba(0, 0, 0, .8)
+
 p, ul, li
   padding: 0
   margin: 0
 
 .ts_vue
-  ._nav
-    padding: 5px 10px
-    a
-      margin-left: 10px
-      text-decoration: none
-      outline: none
-      color: #000
-      &.router-link-active
-        border-bottom: 2px solid #346bff
-      &:first-child
-        margin-left: 0
-      &:hover
-        color: #346bff
+  //width: 30%
+  //height: 25%
+  position: absolute
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  background-color: rgba(255, 255, 255, .9)
+  box-shadow: 1px 2px 2px 1px #cccccc
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  padding: 10px
+  box-sizing: border-box
+  animation: showBox 2s linear forwards
+  ._cont
+    opacity: 0
+    animation: slowShow 1s forwards
+    animation-delay: 2s
+    ._nav
+      padding: 5px 10px
+      a
+        margin-left: 10px
+        text-decoration: none
+        outline: none
+        color: #000
+        &.router-link-active
+          border-bottom: 2px solid #346bff
+        &:first-child
+          margin-left: 0
+        &:hover
+          color: #346bff
 
-  ._nav_content
-    padding: 10px
-    //background: #cccccc
+    ._nav_content
+      padding: 10px
+      //background: #cccccc
 
 ._toast
   position: fixed
@@ -50,4 +71,14 @@ p, ul, li
   0%
     opacity: 0
   100%
+    opacity: 1
+
+@keyframes showBox
+  0%
+    width: 0
+    height: 0
+    opacity: 0
+  100%
+    width: 30%
+    height: 25%
     opacity: 1
