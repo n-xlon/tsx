@@ -1,15 +1,23 @@
 import Vue from 'vue'
 import router from './router/index'
 import store from './store/index'
-import { init, globalTip } from './customs/global'
+import { globalTip } from './customs/global'
 import App from './App.vue'
 import './sass/index.sass'
 
-let _o: object = init()
+class vStore {
+  stList = {1: 'abc'}
+  constructor () {
+    // super.prototype.stList = this.stList
+  }
+  get list () {
+    return this.stList
+  }
+}
 
-let str: string[] = Object.keys(_o)
+let vs = new vStore()
 
-console.log(str)
+console.log(vs.list, store)
 
 var vm = new Vue({
   el: "#app",
@@ -18,14 +26,7 @@ var vm = new Vue({
   render: h => h(App)
 })
 
-Vue.prototype.$o = _o
 Vue.prototype.$tipAlert = (props: object): void => { globalTip(props) }
-
-// str.map((it: string) => {
-//   console.log(it)
-//   // store[it] = _o[it]
-//   // vm.$set(vm.$store as object, it, _o[it])
-// })
 
 window['vm'] = vm
 

@@ -1,13 +1,16 @@
 <template>
-  <div class="ts_vue">
-    <!--<button @click="updateNum">+</button>-->
-    <!--<span>{{ num }}</span>-->
-    <!--<button @click="reduceNum">-</button>-->
-    <!--<Menu :count="num"></Menu>-->
-    <div class="_cont">
-      <div class="_nav"><router-link :to="{path: it.path, query: {name: it.text}}" v-for="(it, index) in menuList" :key="index">{{ it.text }}</router-link></div>
-      <div class="_nav_content">
-        <router-view/>
+  <div class="ts_pro">
+    <Header></Header>
+    <div class="ts_vue">
+      <!--<button @click="updateNum">+</button>-->
+      <!--<span>{{ num }}</span>-->
+      <!--<button @click="reduceNum">-</button>-->
+      <!--<Menu :count="num"></Menu>-->
+      <div class="_cont">
+        <div class="_nav"><router-link :to="{path: it.path, query: {name: it.text}}" v-for="(it, index) in menuList" :key="index">{{ it.text }}</router-link></div>
+        <div class="_nav_content">
+          <router-view/>
+        </div>
       </div>
     </div>
   </div>
@@ -17,11 +20,13 @@
   import Vue from 'vue'
   import Component from 'vue-class-component'
   import { mapActions, mapState } from 'vuex'
+  import Header from './components/header.vue'
 
 
   @Component({
-    components:{
+    components: {
       // 组件
+      Header
     },
     // 导入vuex相关的state、actions、mutations
     computed: mapState([

@@ -1,12 +1,12 @@
 
 interface store {
   dispatch: any,
-  commit: any,
+  commit: any
 }
 
-export function users (store: store, name: string): Promise<any> {
-  store.commit('updateClickNum')
-  return store.dispatch('filterName', name)
+export function users ({dispatch, commit}: store, name: string): Promise<any> {
+  commit('updateClickNum')
+  return dispatch('filterName', name)
 }
 
 export function filterName ({}, nm: string): Promise<any> {
