@@ -4,7 +4,7 @@
 2、 开发环境热更新相关代码
 
 
-###plugins
+### plugins
 1、 vue-class-component
 ```
 import Component from 'vue-class-component'
