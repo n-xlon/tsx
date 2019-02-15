@@ -4,7 +4,6 @@
   "description": "",
   "main": "ts_vue/dest/index.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set NODE_ENV=dev && gulp dev",
     "build:ts": "tsc -p",
     "ts_vue": "webpack -p --display-modules --display-chunks --config ts_vue/webpack.config.js",
