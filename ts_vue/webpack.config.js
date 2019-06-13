@@ -52,7 +52,7 @@ module.exports = {
     contentBase: '/',
     hot: true,
     inline: true,
-    port: "6060",
+    port: "6070",
     open: true
   },
   devtool: 'source-map',

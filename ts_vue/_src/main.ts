@@ -28,6 +28,7 @@ var vm = new Vue({
 
 Vue.prototype.$tipAlert = (props: object): void => { globalTip(props) }
 
+
 window['vm'] = vm
 
 export {

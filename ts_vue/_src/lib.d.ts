@@ -1,6 +1,6 @@
 declare var window: {
   [key: string]: any,
-  prototype: Window,
+  prototype: any,
   new(): Window
 }
 
