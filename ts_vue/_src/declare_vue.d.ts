@@ -9,3 +9,8 @@ declare module 'vue/type/vue' {
     $message: any
   }
 }
+
+declare module 'mammoth' {
+  import mammoth from 'mammoth'
+  export default mammoth
+}

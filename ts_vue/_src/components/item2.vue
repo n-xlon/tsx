@@ -23,6 +23,9 @@
     }
   })
   export default class Item2 extends Mixins(Vue, MenuMixin) {
+    constructor () {
+      super()
+    }
     @Watch('clickNum')
     onClickNumChange (newVal: number, oldVal: number) { console.log(newVal, oldVal) }
 
