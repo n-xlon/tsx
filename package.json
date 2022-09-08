@@ -29,7 +29,7 @@
     "gulp-watch": "^5.0.1",
     "gulp-webserver": "^0.9.1",
     "html-webpack-plugin": "^3.2.0",
-    "mammoth": "^1.4.8",
+    "mammoth": "^1.5.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
